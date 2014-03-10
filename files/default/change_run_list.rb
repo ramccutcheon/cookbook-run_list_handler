@@ -5,6 +5,8 @@ class ChangeRunList < ::Chef::Handler
   def report
     ### If Chef ran successfully.
     if run_status.success?
+      ### AND node is in the specified role.
+      if node.roles.include? node['run_list_handler']['enabled_role']
         ### AND node has the change_run_list flag.
         if node.run_state['change_run_list']
           ### THEN reset run_list if necessary.

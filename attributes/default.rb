@@ -17,4 +17,5 @@
 # limitations under the License.
 #
 
-default['change_role_handler']['post_boot_runlist'] = []
+default['run_list_handler']['enabled_role'] = "first_upload_data_bags"
+default['run_list__handler']['post_boot_runlist'] = []
