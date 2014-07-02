@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #
 # Cookbook Name:: run_list_handler
 # Recipe:: default
@@ -17,5 +18,5 @@
 # limitations under the License.
 #
 
-default['run_list_handler']['enabled_role'] = "first_upload_data_bags"
+default['run_list_handler']['enabled_role'] = 'first_upload_data_bags'
 default['run_list__handler']['post_boot_runlist'] = []

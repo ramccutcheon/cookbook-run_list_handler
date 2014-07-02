@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #
 # Cookbook Name:: run_list_handler
 # Recipe:: default
@@ -17,13 +18,13 @@
 # limitations under the License.
 #
 
-include_recipe "chef_handler"
+include_recipe 'chef_handler'
 
-cookbook_file(::File.join(node['chef_handler']['handler_path'], "change_run_list.rb")).run_action(:create)
+cookbook_file(::File.join(node['chef_handler']['handler_path'], 'change_run_list.rb')).run_action(:create)
 
-chef_handler "Chef::Handler::ChangeRunList" do
-  source   ::File.join node['chef_handler']['handler_path'], "change_run_list.rb"
-  supports :report => true
+chef_handler 'Chef::Handler::ChangeRunList' do
+  source ::File.join node['chef_handler']['handler_path'], 'change_run_list.rb'
+  supports report: true
 
   action :nothing
 end.run_action(:enable)
